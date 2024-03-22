@@ -1,0 +1,38 @@
+﻿<Application x:Class="GutKaz14.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:GutKaz14"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style TargetType="Button">
+            <Style.Triggers>
+                <Trigger Property="Control.IsMouseOver" Value="True">
+                    <Setter Property="BorderThickness" Value="3" ></Setter>
+                </Trigger>
+            </Style.Triggers>
+            <Setter Property="Background" Value="#5EBEC4"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="FontFamily" Value="Cascadia Mono"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Style.Triggers>
+                <Trigger Property="Control.IsFocused" Value="True">
+                    <Setter Property="Control.Background" Value="#FFFFFAD6"></Setter>
+                </Trigger>
+            </Style.Triggers>
+            <Setter Property="BorderBrush" Value="#5EBEC4"/>
+            <Setter Property="BorderThickness" Value="1.5"/>
+        </Style>
+        <Style x:Key="HeaderStyle">
+            <Setter Property="TextBlock.FontSize" Value="26"/>
+            <Setter Property="TextBlock.Padding" Value="5"/>
+            <Setter Property="TextBlock.Foreground" Value="#5EBEC4"/>
+            <Setter Property="TextBlock.FontFamily" Value="Cascadia Mono"/>
+            <Setter Property="TextBlock.FontWeight" Value="DemiBold"/>
+        </Style>
+        <local:DateTimeLessConverter x:Key="LessDayConverter"/>
+        <local:DateTimeEqualConverter x:Key="EqualDayConverter"/>
+        <local:DateTimeTomorrowConverter x:Key="TomorrowDayConverter"/>
+    </Application.Resources>
+</Application>
